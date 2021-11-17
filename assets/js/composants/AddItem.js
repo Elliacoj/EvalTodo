@@ -16,6 +16,15 @@ class AddItem {
         this.divP.appendChild(this.button);
         container.appendChild(this.divP);
     }
+
+    opacity() {
+        this.button.addEventListener("mouseenter", function() {
+            this.style.opacity = "0.7";
+        })
+        this.button.addEventListener("mouseout", function() {
+            this.style.opacity = "initial";
+        })
+    }
 }
 
 export {AddItem};

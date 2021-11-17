@@ -1,10 +1,12 @@
 import {AddItem} from "./AddItem";
+import {ClearItems} from "./ClearItems";
 
 class Container {
     constructor() {
         this.container = document.createElement("div");
         this.title = document.createElement("h1");
         this.addItem = new AddItem();
+        this.clearItem = new ClearItems();
     }
 
     init(titleName) {
@@ -16,6 +18,9 @@ class Container {
         document.body.appendChild(this.container);
 
         this.addItem.init(this.container);
+        this.clearItem.init(this.container);
+        this.addItem.opacity();
+        this.clearItem.opacity();
     }
 }
 
