@@ -1,0 +1,21 @@
+class AddItem {
+    constructor() {
+        this.divP = document.createElement("div");
+        this.inputAdd = document.createElement("input");
+        this.button = document.createElement("div");
+    }
+
+    init(container) {
+        this.divP.style.cssText = "width: 90%; margin: 1rem auto; display: flex; flex-wrap: nowrap;";
+        this.inputAdd.type = "text";
+        this.inputAdd.style.cssText = "width: 80%; padding: 1rem; border-color: #95d6b7; font-size: 2rem;";
+        this.button.style.cssText = "width: 20%; border: 2px solid #95d6b7; text-align: center; color: #95d6b7; padding: 1rem 0; cursor: pointer;";
+        this.button.innerHTML = "Add Item";
+
+        this.divP.appendChild(this.inputAdd);
+        this.divP.appendChild(this.button);
+        container.appendChild(this.divP);
+    }
+}
+
+export {AddItem};
