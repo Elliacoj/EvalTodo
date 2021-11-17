@@ -6,6 +6,7 @@ class ClearItems {
     init(container) {
         this.button.style.cssText = "width: 25rem; border: 2px solid #95d6b7; color: #95d6b7; text-align: center; padding: 1rem; margin: 5rem auto; cursor: pointer;";
         this.button.innerHTML = "Clear Items";
+        this.button.id = "buttonClear";
 
         container.appendChild(this.button);
     }
@@ -16,6 +17,15 @@ class ClearItems {
         })
         this.button.addEventListener("mouseout", function() {
             this.style.opacity = "initial";
+        })
+    }
+
+    clear() {
+        this.button.addEventListener("click", function () {
+            if(localStorage.length !== 0) {
+                localStorage.clear()
+                document.getElementById("allItems").remove()
+            }
         })
     }
 }

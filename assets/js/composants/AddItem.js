@@ -25,6 +25,17 @@ class AddItem {
             this.style.opacity = "initial";
         })
     }
+
+    add(allItems, container, button) {
+        this.button.addEventListener("click", () => {
+            if(this.inputAdd.value.trim().length > 3) {
+                localStorage.setItem(this.inputAdd.value.trim(), this.inputAdd.value.trim());
+                this.inputAdd.value = "";
+                allItems.init(container, button);
+            }
+        })
+
+    }
 }
 
 export {AddItem};
