@@ -32,7 +32,9 @@ class AddItem {
                 localStorage.setItem(this.inputAdd.value.trim(), "0");
                 this.inputAdd.value = "";
                 allItems.init(container, button);
-                allItems.check()
+                allItems.check();
+                allItems.delete();
+                allItems.update();
             }
         })
 
