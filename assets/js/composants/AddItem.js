@@ -29,9 +29,10 @@ class AddItem {
     add(allItems, container, button) {
         this.button.addEventListener("click", () => {
             if(this.inputAdd.value.trim().length > 3) {
-                localStorage.setItem(this.inputAdd.value.trim(), this.inputAdd.value.trim());
+                localStorage.setItem(this.inputAdd.value.trim(), "0");
                 this.inputAdd.value = "";
                 allItems.init(container, button);
+                allItems.check()
             }
         })
 

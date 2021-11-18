@@ -22,9 +22,26 @@ class ClearItems {
 
     clear() {
         this.button.addEventListener("click", function () {
+            let storage = Object.keys(localStorage);
+
             if(localStorage.length !== 0) {
-                localStorage.clear()
-                document.getElementById("allItems").remove()
+                for(let x = localStorage.length; x >= 0; x--) {
+                    if(localStorage.key(x) !== "deleteItem") {
+                        localStorage.removeItem(localStorage.key(x));
+
+                        if(localStorage.getItem("deleteItem")) {
+                            let number = parseInt(localStorage.getItem("deleteItem")) + 1;
+                            localStorage.setItem("deleteItem", number.toString());
+                        }
+                        else {
+                            localStorage.setItem("deleteItem", "1");
+                        }
+                    }
+                }
+
+                if(document.getElementById("allItems")) {
+                    document.getElementById("allItems").remove()
+                }
             }
         })
     }

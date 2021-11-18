@@ -1,6 +1,7 @@
 import {AddItem} from "./AddItem";
 import {ClearItems} from "./ClearItems";
 import {AllItems} from "./AllItems";
+import {ChartJs} from "./Chart";
 
 class Container {
     constructor() {
@@ -9,6 +10,7 @@ class Container {
         this.addItem = new AddItem();
         this.clearItem = new ClearItems();
         this.allItems = new AllItems();
+        this.chartJs = new ChartJs();
     }
 
     init(titleName) {
@@ -22,12 +24,15 @@ class Container {
         this.addItem.init(this.container);
         this.clearItem.init(this.container);
         this.allItems.init(this.container, this.clearItem.button);
+        this.chartJs.init(this.container)
 
         this.addItem.opacity();
         this.clearItem.opacity();
 
         this.addItem.add(this.allItems, this.container, this.clearItem.button);
         this.clearItem.clear();
+        this.allItems.check();
+        this.allItems.delete();
     }
 }
 
