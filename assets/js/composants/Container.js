@@ -33,6 +33,7 @@ class Container {
         this.clearItem.clear();
         this.allItems.check();
         this.allItems.delete();
+        this.allItems.update();
     }
 }
 

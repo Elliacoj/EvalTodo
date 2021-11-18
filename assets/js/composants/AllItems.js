@@ -98,6 +98,43 @@ class AllItems {
             })
         })
     }
+
+    update() {
+        let updateE = document.querySelectorAll(".update");
+
+        updateE.forEach(function (e) {
+            e.addEventListener("click", function () {
+                let contentDiv = e.parentElement.parentElement.firstChild;
+                let contentI = e.parentElement;
+
+                contentI.style.cssText = "display: none";
+
+                let input = document.createElement("input");
+                let button = document.createElement("div");
+                button.innerHTML = "Ok";
+                let content = contentDiv.innerHTML;
+                contentDiv.innerHTML = "";
+                contentDiv.style.display = "flex";
+                contentDiv.style.flexWrap = "nowrap";
+
+                input.style.cssText = "width: 80%; padding: 0.5rem; border-color: #95d6b7; font-size: 2rem;";
+                button.style.cssText = "width: 20%; border: 2px solid #95d6b7; text-align: center; color: #95d6b7; padding: 0.5rem 0; cursor: pointer;";
+
+                input.value = content;
+
+                contentDiv.appendChild(input);
+                contentDiv.appendChild(button);
+
+                button.addEventListener("click", function () {
+                    localStorage.removeItem(content);
+                    content = input.value;
+                    contentDiv.innerHTML = content;
+                    localStorage.setItem(content, "0");
+                    contentI.style.cssText = "width: 20%; display: flex; flex-wrap: nowrap;";
+                })
+            })
+        })
+    }
 }
 
 export {AllItems};
