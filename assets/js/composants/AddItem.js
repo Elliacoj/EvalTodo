@@ -1,10 +1,18 @@
 class AddItem {
+
+    /**
+     * Constructor
+     */
     constructor() {
         this.divP = document.createElement("div");
         this.inputAdd = document.createElement("input");
         this.button = document.createElement("div");
     }
 
+    /**
+     * Init add item
+     * @param container
+     */
     init(container) {
         this.divP.style.cssText = "width: 90%; margin: 1rem auto; display: flex; flex-wrap: nowrap;";
         this.inputAdd.type = "text";
@@ -17,6 +25,9 @@ class AddItem {
         container.appendChild(this.divP);
     }
 
+    /**
+     * Change opacity for button
+     */
     opacity() {
         this.button.addEventListener("mouseenter", function() {
             this.style.opacity = "0.7";
@@ -26,6 +37,12 @@ class AddItem {
         })
     }
 
+    /**
+     * Add a item into local storage
+     * @param allItems
+     * @param container
+     * @param button
+     */
     add(allItems, container, button) {
         this.button.addEventListener("click", () => {
             if(this.inputAdd.value.trim().length > 3) {

@@ -1,8 +1,16 @@
 class ClearItems {
+
+    /**
+     * Constructor
+     */
     constructor() {
         this.button = document.createElement("div");
     }
 
+    /**
+     * Init the clear item
+     * @param container
+     */
     init(container) {
         this.button.style.cssText = "width: 25rem; border: 2px solid #95d6b7; color: #95d6b7; text-align: center; padding: 1rem; margin: 5rem auto; cursor: pointer;";
         this.button.innerHTML = "Clear Items";
@@ -11,6 +19,9 @@ class ClearItems {
         container.appendChild(this.button);
     }
 
+    /**
+     * Change opacity for button
+     */
     opacity() {
         this.button.addEventListener("mouseenter", function() {
             this.style.opacity = "0.7";
@@ -20,6 +31,9 @@ class ClearItems {
         })
     }
 
+    /**
+     * Delete all items into local storage
+     */
     clear() {
         this.button.addEventListener("click", function () {
             let storage = Object.keys(localStorage);

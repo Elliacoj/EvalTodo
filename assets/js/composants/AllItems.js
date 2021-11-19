@@ -1,10 +1,19 @@
 import "@fortawesome/fontawesome-free/js/all.js";
 
 class AllItems {
+
+    /**
+     * Constructor
+     */
     constructor() {
         this.containerAll = document.createElement("div");
     }
 
+    /**
+     * Init all items
+     * @param container
+     * @param buttonClear
+     */
     init(container, buttonClear) {
         this.containerAll.id = "allItems";
         this.containerAll.innerHTML = "";
@@ -61,6 +70,9 @@ class AllItems {
         container.insertBefore(this.containerAll, buttonClear);
     }
 
+    /**
+     * Change color for button check
+     */
     check() {
         let check = document.querySelectorAll(".check");
         check.forEach(function (e) {
@@ -78,6 +90,9 @@ class AllItems {
         })
     }
 
+    /**
+     * Delete a item
+     */
     delete() {
         let deleteE = document.querySelectorAll(".delete");
         deleteE.forEach(function (e) {
@@ -99,6 +114,9 @@ class AllItems {
         })
     }
 
+    /**
+     * Update a item
+     */
     update() {
         let updateE = document.querySelectorAll(".update");
 

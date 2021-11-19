@@ -1,11 +1,19 @@
 import Chart from "chart.js/auto";
 
 class ChartJs {
+
+    /**
+     * Constructor
+     */
     constructor() {
         this.ctx = document.createElement("canvas");
         this.div = document.createElement("div");
     }
 
+    /**
+     * Init the chart
+     * @param container
+     */
     init(container) {
         this.div.style.cssText = "height: 700px; width: 50%; margin: 2rem auto"
         const myChart = new Chart(this.ctx, {

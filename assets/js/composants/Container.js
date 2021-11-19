@@ -4,6 +4,10 @@ import {AllItems} from "./AllItems";
 import {ChartJs} from "./Chart";
 
 class Container {
+
+    /**
+     * Constructor
+     */
     constructor() {
         this.container = document.createElement("div");
         this.title = document.createElement("h1");
@@ -13,6 +17,10 @@ class Container {
         this.chartJs = new ChartJs();
     }
 
+    /**
+     * Init the container
+     * @param titleName
+     */
     init(titleName) {
         this.container.style.cssText = 'width: 100%';
         this.title.style.cssText = "width: 100%; font-size: 4rem; text-align: center; padding: 2rem; color: #333333;";
