@@ -1,7 +1,7 @@
-import {AddItem} from "./AddItem";
-import {ClearItems} from "./ClearItems";
-import {AllItems} from "./AllItems";
-import {ChartJs} from "./Chart";
+import {AddItem} from "./AddItem.mjs";
+import {ClearItems} from "./ClearItems.mjs";
+import {AllItems} from "./AllItems.mjs";
+import {ChartJs} from "./Chart.mjs";
 
 class Container {
 
