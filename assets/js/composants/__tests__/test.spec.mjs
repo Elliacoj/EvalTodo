@@ -1,5 +1,5 @@
 import {UnitTest} from "../UnitTest.mjs";
-import {checkOldMatchers} from "./support/helpers/CustomMatchers.mjs";
+import {checkOldMatchers} from "./helpers/CustomMatchers.mjs";
 
 describe("First test 'Hello world'", function () {
     let test = "hello world";
